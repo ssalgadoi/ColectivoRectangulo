@@ -1,0 +1,27 @@
+
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Fotografías{% endblock %}
+{% block content %}
+<main class="contenedor">
+  <h1>Fotografias</h1>
+  <section class="post-list">
+    <div class="category-content">
+    {% for post in posts %} 
+      <article class="post"> 
+        <div class="post-header" >
+          <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+        </div> 
+        <div class="post-body">
+            <h1>{{ post.title }}</h1>
+            {% comment %} <p>{{ post.content|linebreaks }}</p> {% endcomment %}
+            <a href="{% url 'fotografia' post.id %}" class="post-link">Link</a>
+        </div >
+      </article>
+    {% endfor %}
+    </div >
+  </section>
+</main>
+{% endblock %}

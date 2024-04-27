@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+
+{% block title %}Video{% endblock %}
+
+{% block content %}
+<main class="contenedor">
+  <h1>Video</h1>
+  <section class="row">
+    <div class="col-xl-12">
+        <div class="row align-items-center">
+          <div class="col-xl-6 ">
+            <div class="video-container " >
+              {% video post.video as my_video %} 
+                  <iframe  src="{{ my_video.url }}" frameborder="0" allowfullscreen></iframe> 
+              {% endvideo %} 
+            </div>
+          </div>
+          <div class="col-xl-6 ">
+            <div class="texto">
+              <h1>{{ post.title }}</h1>
+              <p>{{ post.content|linebreaks }}</p>
+              <p class="titulo-post">{{ post.data }}</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

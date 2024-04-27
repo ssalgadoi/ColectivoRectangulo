@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Fotografía{% endblock %}
+
+
+{% block content %}
+<main class="contenedor">
+  <section class="project">
+  <h1>Fotografía</h1>
+  <div>
+    <p>{{ post.content|linebreaks }}</p>
+  </div>
+
+  <div class="galeria">
+      {% for image in post.imagenes.all %}
+          <img  src="{{ image.image.url }}" alt="{{ post.title }}" onclick="fullView('{{ image.image.url }}')">
+      {% endfor %}
+  </div>
+  <div id="fullImageView">
+      <img id="fullImage">
+      <span id="closeButton" onclick="closeFullView()">X</span>
+  </div>
+</section>
+</main>
+
+<script type="text/javascript">
+  function fullView(imgLink) {
+      document.getElementById("fullImage").src = imgLink;
+      document.getElementById("fullImageView").style.display = "block";
+  }
+
+  function closeFullView() {
+      document.getElementById("fullImageView").style.display = "none";
+  }
+</script> 
+
+{% endblock %}
+
+{% comment %} <div class="fulImg">
+    {% for image in post.imagenes.all %}
+        <img src="{{ image.image.url }}" alt="{{ post.title }}" id="fullimg">
+        <span onclick="closeImg()">X</span>
+      {% endfor %}
+  </div>
+  <h1>Fotografía</h1>
+  <section class="galeria">
+  <div class="galeria-imagenes">
+      {% for image in post.imagenes.all %}
+        <img onclick="openFulImg()" src="{{ image.image.url }}" alt="{{ post.title }}">
+      {% endfor %}
+  </div>
+  </section> {% endcomment %}

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block content %}
+<main class="contenedor">
+  {% for post in posts %}
+  <section class="project">
+    <div class="project-heading">
+      <h1 class="title-project">{{post.title}}</h1>
+      <div class="project-container">
+        <div class="project-box">
+          <div class="project-img">
+            <img  src="{{post.image.url}}" alt="{{post.title}}">
+            <a href="{{ post.url }}" class="project-link" target="_blank">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> 
+          </div>
+          <div>
+
+          </div>
+          <div class="project-text"> 
+            <p>{{ post.content }}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </section>
+  {% endfor %}
+</main>
+
+{% endblock %}

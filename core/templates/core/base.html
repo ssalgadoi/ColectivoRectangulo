@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--CSS-->
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+   <!-- Importamos la libreria de normalize (esto sirve para que se vea mejor en los diferentes navegadores) -->
+  <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}">
+  <!-- esto ayuda para que la pagina se carge mas rapido -->
+  <link rel="preload" href="{% static 'core/css/normalize.css' %}">
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'fontawesomefree/css/all.min.css'%}">
+  <title>{% block title %}{% endblock %} | Colectivo Rectángulo</title>
+  <!-- Icono Web -->
+  <link rel="icon" href="{% static 'core/img/logo.png' %}" type="image/x-icon">
+  <!-- Enlaces a los archivos CSS y JavaScript de Bootstrap desde el CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!--JavaScript-->
+  <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+  <script src="{% static 'core/js/date.js' %}"></script>
+  <script src="{% static 'core/js/toggle.js' %}"></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="{% url 'home' %}" class="logo">
+        <img class="image" src="{% static 'core/img/logo.png' %}">
+        <h1 class="titulo  titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
+      </a>
+      <button class="nav__toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu">
+      <li class="nav-menu-item ">
+        <a href="{% url 'home' %}" class="nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}">Inicio</a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="{% url 'nosotros' %}" class="nav-menu-link nav-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}">Nosotros</a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="{% url 'historias' %}" class="nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" >Historias</a>
+      </li>
+      <li class="nav-menu-item ">
+        <a href="#" class="nav-menu-link nav-link {% if request.path == '/fotografias/' or request.path == '/videos/' %}nav-menu-link_active{% endif %}" >Colaboraciones</a>
+        <ul class="sub__menu ">
+            <li class="nav-menu-item"> 
+                <a href="{% url 'fotografias' %}" class="nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}">Fotografía</a>
+            </li>
+            <li class="nav-menu-item">
+                <a href="{% url 'videos' %}" class="nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}">Video</a>
+            </li>
+        </ul>
+    </li>
+    
+      <li class="nav-menu-item">
+        <a href="{% url 'proyectos' %}" class="nav-menu-link nav-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}">Proyectos</a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="{% url 'noticias' %}" class="nav-menu-link nav-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}">Noticias</a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="{% url 'contacto' %}" class="nav-menu-link nav-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}">Contacto</a>
+      </li>
+    </ul>
+    </nav> 
+  </header> 
+  
+  {% block content %} {% endblock %}
+
+  <footer class="footer">
+    <div class="contenedor__footer">
+    <ul class="social-icons">
+      <li>
+        {% if LINK_INSTAGRAM %}      
+      <a href="{{LINK_INSTAGRAM}}" class="link" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      {% endif %}
+      </li>
+      <li>
+        {% if LINK_X %} 
+      <a href="{{ LINK_X }}" class="link" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      {% endif %}
+      </li>
+      <li>
+        {% if LINK_FACEBOOK %} 
+      <a href="{{ LINK_FACEBOOK }}" class="link" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      {% endif %}
+      </li>
+      <li>
+        {% if LINK_VIMEO %} 
+      <a href="{{ LINK_VIMEO }}" class="link" target="_blank">
+        <i class="fa-brands fa-vimeo"></i>
+      </a>
+      {% endif %}
+      </li>
+    </ul>
+    {% comment %} <ul class="footer__menu">    
+    <li><a href="href="{% url 'contacto' %}" class="nav__a {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}"">Contacto</a></li>
+    </ul> {% endcomment %}
+    <p class="menu">
+      {% load pages_extras %}
+      {% get_page_list as page_list %}
+      {% for page in page_list %}
+      <a href="{% url 'page' page.id page.title|slugify  %}" class="link nav-a">{{ page.title }}</a>
+      {% if not forloop.last %}·{% endif %}  
+      {% endfor %}
+    </p> 
+    <p class="año">Colectivo Rectángulo <span>&copy</span> <span id="current-year"></span></p>
+  </div>
+  </footer>
+
+</body>
+
+</html

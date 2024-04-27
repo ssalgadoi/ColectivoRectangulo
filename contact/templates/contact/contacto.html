@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<section class="contenedor">
+    <h1>Contacto</h1>
+
+<!-- Formulario de contacto -->
+            
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form | crispy }}
+      <input type="submit" value="Enviar" 
+      {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
+    </form>
+    {% if 'ok' in request.GET %}
+      <div class="alert alert-success mt-5" roles="alert">
+        <strong>El mensaje se ha enviado correctamente</strong>
+      </div>
+    {% endif %}
+
+    {% if 'error' in request.GET %}
+      <div class="alert alert-success mt-5" roles="alert">
+        <strong>El mensaje no ha podido ser enviado. Por favor, intente más tarde</strong>
+      </div>
+    {% endif %}
+    
+    <!-- Fin formulario de contacto -->
+</div>
+</section >
+
+{% endblock %}
