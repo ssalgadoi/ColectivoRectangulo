@@ -1,4 +1,4 @@
-asgiref==3.8.1
+asgiref==3.4.1
 certifi==2024.2.2
 charset-normalizer==3.3.2
 crispy-bootstrap5==2024.2
