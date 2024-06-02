@@ -9,8 +9,8 @@ class Category(models.Model):
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
 
     class Meta:
-        verbose_name = "categoría"
-        verbose_name_plural = "categorías"
+        verbose_name = "categoria"
+        verbose_name_plural = "categorias"
         ordering = ['-created']
 
     def __str__(self):

@@ -7,30 +7,23 @@
 
 {% block content %}
 <section class="contenedor">
-    <h1>Contacto</h1>
+  <h1>Contacto</h1>
 
-<!-- Formulario de contacto -->
-            
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form | crispy }}
-      <input type="submit" value="Enviar" 
-      {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
-    </form>
-    {% if 'ok' in request.GET %}
-      <div class="alert alert-success mt-5" roles="alert">
-        <strong>El mensaje se ha enviado correctamente</strong>
-      </div>
-    {% endif %}
+  <!-- Formulario de contacto -->
+  <form action="" method="POST">
+      {% csrf_token %}
+      {{ form | crispy }}
+      <input type="submit" value="Enviar" {% if messages %}disabled{% endif %}>
+  </form>
 
-    {% if 'error' in request.GET %}
-      <div class="alert alert-success mt-5" roles="alert">
-        <strong>El mensaje no ha podido ser enviado. Por favor, intente más tarde</strong>
+  <!-- Mensajes de éxito/error -->
+  {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} mt-5" role="alert">
+          <strong>{{ message }}</strong>
       </div>
-    {% endif %}
-    
-    <!-- Fin formulario de contacto -->
-</div>
-</section >
+  {% endfor %}
+  <!-- Fin formulario de contacto -->
+</section>
+
 
 {% endblock %}

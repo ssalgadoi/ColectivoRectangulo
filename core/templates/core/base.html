@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!--CSS-->
   <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
    <!-- Importamos la libreria de normalize (esto sirve para que se vea mejor en los diferentes navegadores) -->
-  <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}">
-  <!-- esto ayuda para que la pagina se carge mas rapido -->
-  <link rel="preload" href="{% static 'core/css/normalize.css' %}">
+   <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}" as="style">
+
   <!--Font awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="{% static 'fontawesomefree/css/all.min.css'%}">
@@ -22,20 +23,21 @@
   <!--JavaScript-->
   <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
   <script src="{% static 'core/js/date.js' %}"></script>
-  <script src="{% static 'core/js/toggle.js' %}"></script>
+
 </head>
 <body>
   <header class="header">
-    <nav class="nav">
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
       <a href="{% url 'home' %}" class="logo">
         <img class="image" src="{% static 'core/img/logo.png' %}">
         <h1 class="titulo  titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
       </a>
-      <button class="nav__toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="nav-menu">
-      <li class="nav-menu-item ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="nav-menu navbar-nav ms-auto">
+      <li class="nav-menu-item nav-item" ">
         <a href="{% url 'home' %}" class="nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}">Inicio</a>
       </li>
       <li class="nav-menu-item">
@@ -44,18 +46,18 @@
       <li class="nav-menu-item">
         <a href="{% url 'historias' %}" class="nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" >Historias</a>
       </li>
-      <li class="nav-menu-item ">
-        <a href="#" class="nav-menu-link nav-link {% if request.path == '/fotografias/' or request.path == '/videos/' %}nav-menu-link_active{% endif %}" >Colaboraciones</a>
-        <ul class="sub__menu ">
-            <li class="nav-menu-item"> 
-                <a href="{% url 'fotografias' %}" class="nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}">Fotografía</a>
+      <li class="nav-item dropdown nav-menu-item">
+        <a class="nav-link nav-menu-link  {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Colaboraciones</a>
+        <ul class="dropdown-menu">
+            <li class="nav-menu-item">
+              <a class="dropdown-item nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %} dropdown-item" href="{% url 'fotografias' %}">Fotografia</a>
             </li>
             <li class="nav-menu-item">
-                <a href="{% url 'videos' %}" class="nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}">Video</a>
+              <a class="dropdown-item nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %} dropdown-item" href="{% url 'videos' %}">Video</a>
             </li>
         </ul>
     </li>
-    
+  
       <li class="nav-menu-item">
         <a href="{% url 'proyectos' %}" class="nav-menu-link nav-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}">Proyectos</a>
       </li>
@@ -66,6 +68,7 @@
         <a href="{% url 'contacto' %}" class="nav-menu-link nav-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}">Contacto</a>
       </li>
     </ul>
+  </div>
     </nav> 
   </header> 
   

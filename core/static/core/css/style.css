@@ -58,13 +58,20 @@ h4 {
 
 .header {
     background-color: rgb(255, 255, 255);
-    height: 120px;
+    height: 132px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     border-bottom: 1px solid gray;
     z-index: 1;
+}
+.dropdown-menu {
+    width: 135px; /* Define el ancho del cuadro desplegable */
+}
+
+.dropdown-item {
+    width: 100%; /* Opcional: Haz que los elementos ocupen todo el ancho del cuadro desplegable */
 }
 .nav {
     display: flex;
@@ -110,7 +117,7 @@ h4 {
     display: flex;
     align-items: center;
     text-align: center;
-    width: 100%;
+    width: 100%; 
     
     /* margin: 90 5px; */
     /* text-transform: capitalize;
@@ -144,7 +151,7 @@ h4 {
 }
 
 
-
+/* 
 .sub__menu {
     background-color: rgb(255, 255, 255); 
     height: 90px; 
@@ -159,16 +166,19 @@ h4 {
     display: none;
     list-style: none;
     border-bottom: 1px solid gray;
-}
+} */
 
 
 
-.nav-menu-item:hover .sub__menu {
-    display: flex; /* Aparece cuando se pasa por encima de la opción "Colaboraciones" */
-    transition: .8s;
-}
+/* .nav-menu-item:hover .sub__menu {
+    display: flex; /* Aparece cuando se pasa por encima de la opción "Colaboraciones" 
+    transition: 2s;
+} */
 
-.nav__toggle {
+
+
+
+/* .nav__toggle {
     color: black;
     background: none;
     border: none;
@@ -176,15 +186,16 @@ h4 {
     font-size: 30px;
     padding: 0 49px;
     display:  none;
-    /* margin-right: 40px; */
-}
+    /* margin-right: 40px; 
+} */
 
 
 
-@media (max-width: 1245px) {
+@media (max-width: 800px) {
     .header {
-        height: 110px;
+        height: 127px;
     }
+
     .image {
         display: none;
     }
@@ -199,18 +210,18 @@ h4 {
         line-height: 120px;
         margin-left: 1px;
     }
-    .contenedor {
+    /* .contenedor {
         max-width: 1170px; 
         margin: 120px auto 0 auto; 
         padding: 0 15;
         margin-bottom: 10%;
-    } 
+    }  */
     
-    .nav-menu {
+    /* .nav-menu {
         flex-direction: column;
         position: fixed;
         align-items: center;
-        /* margin-right: 20px; */
+        /* margin-right: 20px; 
         top: 110px;
         left: 0;
         width: 100%;
@@ -222,39 +233,33 @@ h4 {
         transition: left 0.3;
         justify-content: center;
 
-    }
-    .sub__menu {
+    } */
+    /* .sub__menu {
         background: black;
         position: static;
         opacity: 1;
         padding: 0;
         box-shadow: none;
         width: 100%;
-        /* display: none; */
+        /* display: none;
         border-bottom: none;
         flex-direction: column;
+       
         
-    }
-    .nav-link {
+    } */
+    /* .nav-link {
         color: white !important;
     }
-    
-    .nav-menu-item {
+     */
+    /* .nav-menu-item {
         display: flex;
-        margin-bottom: 10px;
-    }
-     
+        margin-bottom: 19px;
+        
+    } */
     .footer {
         min-height: 20vh;
     }
-    .nav__toggle {
-        display: block;
-    }
-   
-    .nav-menu_visible {
-        display: block;
-    }
-
+  
 }
 
 /* Footer */

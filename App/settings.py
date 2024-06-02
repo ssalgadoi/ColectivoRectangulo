@@ -96,8 +96,12 @@ WSGI_APPLICATION = 'App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ColectivoRectángulo',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 123456,
+        'PORT':  5432
     }
 }
 
@@ -123,10 +127,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+LANGUAGE_CODE = 'es-cl'
 
-LANGUAGE_CODE = 'es'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
