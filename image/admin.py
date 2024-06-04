@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, PostImage
+
+class PostImageInline(admin.TabularInline):
+    model = PostImage
+    extra = 1  # Número de formularios vacíos a mostrar
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
@@ -8,5 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content', 'author__username')
     date_hierarchy = 'published'
     list_filter = ('author__username', 'published')
+    inlines = [PostImageInline]
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(PostImage)

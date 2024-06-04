@@ -26,19 +26,64 @@
 
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
-      <a href="{% url 'home' %}" class="logo">
+  
+</body>
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="{% url 'inicio' %}" class="logo">
         <img class="image" src="{% static 'core/img/logo.png' %}">
         <h1 class="titulo  titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse custom-navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto nav-menu navbar">
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-menu-link  {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Colaboraciones
+            </a>
+            <ul class="dropdown-menu custom-dropdown-menu">
+              <li class="nav-item"><a class="dropdown-item nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}" href="{% url 'fotografias' %}">Fotografia</a></li>
+              <li class="nav-item"><a class="dropdown-item nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}" href="{% url 'videos' %}">Video</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-menu-link nav-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- 
+  <header class="header">
+    <nav class="navbar navbar-expand-md bg-body">
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="nav-menu navbar-nav ms-auto">
       <li class="nav-menu-item nav-item" ">
-        <a href="{% url 'home' %}" class="nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}">Inicio</a>
+        <a href="{% url 'inicio' %}" class="nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}">Inicio</a>
       </li>
       <li class="nav-menu-item">
         <a href="{% url 'nosotros' %}" class="nav-menu-link nav-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}">Nosotros</a>
@@ -47,7 +92,7 @@
         <a href="{% url 'historias' %}" class="nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" >Historias</a>
       </li>
       <li class="nav-item dropdown nav-menu-item">
-        <a class="nav-link nav-menu-link  {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Colaboraciones</a>
+        <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Colaboraciones</a>
         <ul class="dropdown-menu">
             <li class="nav-menu-item">
               <a class="dropdown-item nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %} dropdown-item" href="{% url 'fotografias' %}">Fotografia</a>
@@ -70,12 +115,15 @@
     </ul>
   </div>
     </nav> 
-  </header> 
+  </header>  -->
   
   {% block content %} {% endblock %}
 
   <footer class="footer">
     <div class="contenedor__footer">
+      <a href="{% url 'inicio' %}" class="logo">
+        <h1 class="titulo-footer titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
+      </a>
     <ul class="social-icons">
       <li>
         {% if LINK_INSTAGRAM %}      
@@ -106,9 +154,6 @@
       {% endif %}
       </li>
     </ul>
-    {% comment %} <ul class="footer__menu">    
-    <li><a href="href="{% url 'contacto' %}" class="nav__a {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}"">Contacto</a></li>
-    </ul> {% endcomment %}
     <p class="menu">
       {% load pages_extras %}
       {% get_page_list as page_list %}

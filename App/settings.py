@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'home',
+    'about',
     'history',
     'contact',
     'pages',
@@ -97,7 +99,7 @@ WSGI_APPLICATION = 'App.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ColectivoRectángulo',
+        'NAME': 'RectánguloColectivo',
         'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': 123456,

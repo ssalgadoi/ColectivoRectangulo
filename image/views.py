@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, PostImage
-from history.models import Category
+# from history.models import Category
 
 # Create your views here.
 
@@ -12,6 +12,6 @@ def fotografia(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     return render(request, "image/fotografia.html", {'post': post})
 
-def image_category(request, category_id):
-    category = get_object_or_404(Category, id=category_id)
-    return render(request, "image/category.html", {'category': category})
+# def image_category(request, category_id):
+#     category = get_object_or_404(Category, id=category_id)
+#     return render(request, "image/category.html", {'category': category})

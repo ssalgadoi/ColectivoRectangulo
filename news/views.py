@@ -8,8 +8,8 @@ def news(request):
     posts = Post.objects.all()
     return render(request, "news/noticias.html", {'posts': posts})
 
-def news_category(request, category_id):
-    category = get_object_or_404(Category, id=category_id)
-    return render(request, "news/category.html", {'category': category})
+# def news_category(request, category_id):
+#     category = get_object_or_404(Category, id=category_id)
+#     return render(request, "news/category.html", {'category': category})
 
 
