@@ -15,3 +15,12 @@ def historia(request, post_id):
 def category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     return render(request, "history/category.html", {'category': category})
+
+def audiovisual(request):
+    category = get_object_or_404(Category, name="Más")
+    posts = Post.objects.filter(category=category)
+    return render(request, "history/videos.html", {'posts': posts})
+
+def video_detail(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, "history/video.html", {'post': post})

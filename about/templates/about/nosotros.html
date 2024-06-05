@@ -5,7 +5,37 @@
 {% block title %}Nosotros{% endblock %}
 
 {% block content %}
+
+
 <main class="contenedor">
+  <h1>Nosotros</h1>
+  <div class="container">
+    {% for post in posts %}
+    <div class="about-post">
+      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{% static 'core/img/about.jpg' %}" alt="">
+      <div class="about-heading-content">
+        <div class="row">
+          <div class="col-xl-9 col-lg-10 mx-auto">
+            <div class="aspect-ratio">
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top img-fluid">
+            </div>
+            <div class="bg-faded rounded p-5">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">{{ post.title }}</span>
+              </h2>
+              <div class="post-content">
+                {{ post.content|safe }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+{% comment %} <main class="contenedor">
   <h1>Nosotros</h1>
   <div class="container">
     {% for post in posts %} 
@@ -29,7 +59,7 @@
     </div>
     {% endfor %}
   </div>
-</main>
+</main> {% endcomment %}
 
 
 

@@ -56,72 +56,71 @@ h4 {
 }
 /*Header*/
 
+/* Ajustes generales para el header */
 .header {
-    background-color: rgb(255, 255, 255);
-    height: 132px;
+ 
+    height: 112px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    border-bottom: 1px solid gray;
     z-index: 1;
 }
-.dropdown-menu {
-    width: 135px; /* Define el ancho del cuadro desplegable */
-}
 
-.dropdown-item {
-    width: 100%; /* Opcional: Haz que los elementos ocupen todo el ancho del cuadro desplegable */
-}
+
 .nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
     max-width: 1650px;
     margin: 0 auto; 
 }
+
+/* Estilos para el logo */
 .logo {
     line-height: 120px; 
-    padding:  0 150px;
+    padding: 0 150px;
     text-decoration: none;
-    /* margin-left: 8%; */
-
 }
+
+/* Estilos para la imagen del logo */
 .image {
     width: 90px;
     height: auto;   
-}  
+}
+
+/* Estilos para el título */
 .titulo {
     display: none;
     color: #000;
     line-height: 110px;
-    
 }
+
+/* Estilos adicionales para el título */
 .titulo-colectivo {
     font-weight: 400;
 }
+
 .titulo-rectangulo {
     font-weight: 700;
 }
+
+/* Estilos para el menú de navegación */
 .nav-menu {
     display: flex;
     list-style: none;
     justify-content: center;
     margin-right: 80px; 
-    /* position: relative;  */
 }
 
-.nav-a {
-    color: black;
-    text-decoration: none;
-}
-
+/* Estilos para los enlaces del menú */
 .nav-menu-link {
-    color: black !important; 
-
-
+    color: black !important;
+    font-size: 15px !important; /* Ajustar el tamaño de la fuente según sea necesario */
+    padding: 10px 15px; /* Ajustar el relleno según sea necesario */
 }
+
+/* Estilos para el efecto hover y active de los enlaces */
 .nav-menu-link::after {
     content: "";
     height: 4px; /* Grosor de la línea */
@@ -129,28 +128,14 @@ h4 {
     background-color: rgb(63, 63, 63);
     display: block;
     transition: all 300ms;
-
 }
+
 .nav-menu-link:hover::after,
 .nav-menu-link:focus::after,
 .nav-menu-link_active::after {
     width: 100%;
 }
- /* Estilo para el menú colapsado */
-.custom-navbar-collapse.collapse.show {
-    background-color: #cdcdcd; /* Cambia este valor al color que desees */
-    position: fixed; /* Para que el menú se posicione absolutamente */
-    top: 120px; /* Comienza desde la parte superior */
-    left: 0; /* Alineado a la izquierda */
-    width: 100%; /* Ancho completo */
-    height: 100vh; /* Altura completa de la vista */
-    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
-    overflow-y: auto; /* Añade scroll si el contenido es demasiado grande */
-    }
 
-.custom-navbar-collapse .nav-link {
-    font-size: 15px;
-}
 
 
 
@@ -292,71 +277,70 @@ h4 {
 
 
 /* Nosotros */
-.about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.about-image {
-    flex: 1;
-    margin-right: 40px;
-    overflow: hidden;
-}
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    transition: 0.5s ease;
-}
-.about-image:hover img {
-    transform: scale(1.2);
-}
-.about-content {
-    flex: 1;
-}
-.about-content h1 {
-    font-size: 23px;
-    margin-bottom: 15px;
-    color: rgb(0, 0, 0);
-}
-.about-content p {
-    font-size: 18px;
-    line-height: 1.5;
-    color: rgb(0, 0, 0);
-}
-.about-content .read-more {
-    display: inline-block;
-    padding: 10px 20px;
-    color: red;
-    font-size: 19px;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-top: 15px;
-    transition: 0.3s ease;
-}
-.about-content .read-more:hover {
-    background-color: red;
-}
-@media (max-width: 1145px) {
-    .about {
-        padding: 20px;
-        flex-direction: column;
-    }
-    .about-image {
-        margin-right: 0px;
-        margin-bottom: 20px;
-    }
-    .about-content p {
-        padding: 0px;
-        font-size: 16px;
-    }
-    .about-content .read-more {
-        font-size: 16px;
-    }
-    
+.about-post {
+    margin-bottom: 30px; /* Espacio entre cada post */
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+
+.about-heading-content {
+    margin-top: 20px;
+}
+
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporción de 16:9 */
+}
+
+.aspect-ratio img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-faded {
+    background-color: #ffffff;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section-heading-lower {
+    display: block;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.p-5 {
+    padding: 1.5rem !important;
+}
+
+.post-content p {
+    margin: 0 0 1rem 0;
+}
+
+.post-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
 /* Historias */
 .contenedor h1 {
     margin-bottom: 40px; /* Ajusta este valor según sea necesario */
@@ -1160,4 +1144,38 @@ form .action input {
     height: 100%;
     object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
     object-position: center; /* Centra la imagen */
+}
+
+
+/* Noticias */
+
+.project-img {
+    width: 100%; /* Ancho fijo */
+    height: 450px; /* Alto fijo */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    position: relative; /* Posición relativa para el enlace */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.project-img img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 100%; /* Alto completo del contenedor */
+    object-fit: cover; /* Ajustar la imagen sin distorsión */
+}
+
+.project-link {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px; /* Relleno */
+    border-radius: 50%; /* Bordes redondeados */
+    color: white; /* Color del icono */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para el contenido del enlace */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.project-link i {
+    font-size: 24px; /* Tamaño del icono */
 }

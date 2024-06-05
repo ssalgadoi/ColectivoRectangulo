@@ -29,49 +29,54 @@
   
 </body>
 <header class="header">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <a href="{% url 'inicio' %}" class="logo">
-        <img class="image" src="{% static 'core/img/logo.png' %}">
-        <h1 class="titulo  titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
+      <!-- Logo y Título -->
+      <a href="{% url 'inicio' %}" class="navbar-brand logo">
+        <img class="image" src="{% static 'core/img/logo.png' %}" alt="Logo">
+        <h1 class="titulo titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
       </a>
+      <!-- Botón de navegación colapsable para móviles -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse custom-navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ms-auto nav-menu navbar">
+      <!-- Enlaces de navegación -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto nav-menu">
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link nav-menu-link  {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link  nav-menu-link {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Colaboraciones
             </a>
-            <ul class="dropdown-menu custom-dropdown-menu">
-              <li class="nav-item"><a class="dropdown-item nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}" href="{% url 'fotografias' %}">Fotografia</a></li>
-              <li class="nav-item"><a class="dropdown-item nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}" href="{% url 'videos' %}">Video</a></li>
-            </ul>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item nav-menu-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}" href="{% url 'fotografias' %}">Fotografía</a>
+              <a class="dropdown-item nav-menu-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}" href="{% url 'videos' %}">Videos</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-menu-link nav-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
+            <a class="nav-link nav-menu-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+
+
 
 <!-- 
   <header class="header">

@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'news',
     'project',
     'image',
-    'audiovisual',
+
 ]
 
 # Configuracion de Crispy-forms

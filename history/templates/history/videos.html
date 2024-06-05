@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Videos{% endblock %}
+{% block content %}
+<main class="contenedor">
+  <h1>Videos</h1>
+  <section class="post-list">
+    <div class="category-content">
+      {% for post in posts %}
+        <article class="post">
+          <div class="post-header">
+            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+          </div>
+          <div class="post-body">
+            <h2>{{ post.title }}</h2>
+            <a href="{% url 'video_detail' post.id %}" class="post-link">Ver detalles</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

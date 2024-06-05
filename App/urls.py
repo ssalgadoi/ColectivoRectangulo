@@ -38,8 +38,7 @@ urlpatterns = [
     path('proyectos/', include('project.urls')),
     # Path de image
     path('fotografias/', include('image.urls')),
-    # Path de audiovisual
-    path('videos/', include('audiovisual.urls')),
+
     
 ]
 
