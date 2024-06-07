@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!--CSS-->
   <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-   <!-- Importamos la libreria de normalize (esto sirve para que se vea mejor en los diferentes navegadores) -->
-   <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}" as="style">
+  <!-- Importamos la libreria de normalize (esto sirve para que se vea mejor en los diferentes navegadores) -->
+  <link rel="stylesheet" href="{% static 'core/css/normalize.css' %}" as="style">
 
   <!--Font awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -27,106 +26,61 @@
 </head>
 <body>
   
-</body>
-<header class="header">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container">
-      <!-- Logo y Título -->
-      <a href="{% url 'inicio' %}" class="navbar-brand logo">
-        <img class="image" src="{% static 'core/img/logo.png' %}" alt="Logo">
-        <h1 class="titulo titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
-      </a>
-      <!-- Botón de navegación colapsable para móviles -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Enlaces de navegación -->
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ms-auto nav-menu">
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link  nav-menu-link {% if request.path == '/colaboraciones/' %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Colaboraciones
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item nav-menu-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %}" href="{% url 'fotografias' %}">Fotografía</a>
-              <a class="dropdown-item nav-menu-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %}" href="{% url 'videos' %}">Videos</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-menu-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
-          </li>
-        </ul>
+  <header class="">
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container">
+        <!-- Logo y Título -->
+        <a href="{% url 'home' %}" class="logo">
+          <img class="image" src="{% static 'core/img/logo.png' %}" alt="Logo">
+          <h1 class="titulo titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
+        </a>
+        <!-- Botón de navegación colapsable para móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-menu-link {% if '/fotografias/' in request.path or '/videos/' in request.path   %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Colaboraciones
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item nav-menu-link " href="{% url 'fotografias' %}">Fotografía</a>
+                <a class="dropdown-item nav-menu-link"  href="{% url 'videos' %}">Videos</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-menu-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
 
 
-<!-- 
-  <header class="header">
-    <nav class="navbar navbar-expand-md bg-body">
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="nav-menu navbar-nav ms-auto">
-      <li class="nav-menu-item nav-item" ">
-        <a href="{% url 'inicio' %}" class="nav-menu-link nav-link {% if request.path == '/' %}nav-menu-link_active{% endif %}">Inicio</a>
-      </li>
-      <li class="nav-menu-item">
-        <a href="{% url 'nosotros' %}" class="nav-menu-link nav-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}">Nosotros</a>
-      </li>
-      <li class="nav-menu-item">
-        <a href="{% url 'historias' %}" class="nav-menu-link nav-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" >Historias</a>
-      </li>
-      <li class="nav-item dropdown nav-menu-item">
-        <a class="" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Colaboraciones</a>
-        <ul class="dropdown-menu">
-            <li class="nav-menu-item">
-              <a class="dropdown-item nav-menu-link nav-link {% if request.path == '/fotografias/' %}nav-menu-link_active{% endif %} dropdown-item" href="{% url 'fotografias' %}">Fotografia</a>
-            </li>
-            <li class="nav-menu-item">
-              <a class="dropdown-item nav-menu-link nav-link {% if request.path == '/videos/' %}nav-menu-link_active{% endif %} dropdown-item" href="{% url 'videos' %}">Video</a>
-            </li>
-        </ul>
-    </li>
-  
-      <li class="nav-menu-item">
-        <a href="{% url 'proyectos' %}" class="nav-menu-link nav-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}">Proyectos</a>
-      </li>
-      <li class="nav-menu-item">
-        <a href="{% url 'noticias' %}" class="nav-menu-link nav-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}">Noticias</a>
-      </li>
-      <li class="nav-menu-item">
-        <a href="{% url 'contacto' %}" class="nav-menu-link nav-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}">Contacto</a>
-      </li>
-    </ul>
-  </div>
-    </nav> 
-  </header>  -->
-  
   {% block content %} {% endblock %}
 
   <footer class="footer">
     <div class="contenedor__footer">
-      <a href="{% url 'inicio' %}" class="logo">
+      <a href="{% url 'home' %}" class="logo">
         <h1 class="titulo-footer titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
       </a>
     <ul class="social-icons">
@@ -170,7 +124,30 @@
     <p class="año">Colectivo Rectángulo <span>&copy</span> <span id="current-year"></span></p>
   </div>
   </footer>
+<!-- Botón de scroll to top -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">
+  <i class="fa-solid fa-arrow-up"></i><!-- Esto mostrará una flecha hacia arriba de FontAwesome -->
+</button>
+
 
 </body>
+<script>
+  // Mostrar el botón cuando el usuario desplaza hacia abajo 20px desde la parte superior del documento
+  window.onscroll = function() { scrollFunction() };
 
-</html
+  function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("scrollToTopBtn").style.display = "block";
+      } else {
+          document.getElementById("scrollToTopBtn").style.display = "none";
+      }
+  }
+
+  // Cuando el usuario hace clic en el botón, se desplaza hacia arriba
+  function scrollToTop() {
+      document.body.scrollTop = 0; // Para Safari
+      document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+  }
+</script>
+
+</html>

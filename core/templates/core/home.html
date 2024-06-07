@@ -12,6 +12,12 @@
       {% for post in posts %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <img class="d-block w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
+          <div class="carousel-caption d-md-block">
+            <div class="black-bar">
+              <h1>{{ post.title }}</h1>
+            <a href="{% url 'historia' post.id %}" class="btn btn-primary">Ver Historia</a>
+            </div>
+          </div>
         </div>
       {% endfor %}
     </div>

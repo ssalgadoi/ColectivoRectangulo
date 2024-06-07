@@ -23,9 +23,7 @@ urlpatterns = [
     # Path para la URL raíz
     path('', include('core.urls')),
     # Paths del about
-    path('about', include('about.urls')),
-    # Paths del home
-    path('inicio', include('home.urls')),
+    path('nosotros/', include('about.urls')),
     # Path de history
     path('historias/', include('history.urls')),
     # Path de contact

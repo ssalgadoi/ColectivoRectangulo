@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
-/* @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900'); */
-
 
 
 html {
@@ -26,9 +24,9 @@ p {
 }
 .contenedor {
     /* max-width: 1000px;   */
-    margin: 155px auto 0 auto;  
-    /* padding: 0 15;
-    margin-bottom: 10%; */
+    margin: 30px auto 70px auto; 
+    padding: 0 15;
+    margin-bottom: 10%; 
 } 
 
 
@@ -58,13 +56,20 @@ h4 {
 
 /* Ajustes generales para el header */
 .header {
- 
-    height: 112px;
-    position: fixed;
+    background-color: rgb(255, 255, 255);
+    height: 100px; 
+    /* position: fixed; */
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+    border-bottom: 1px solid gray;
+}
+.custom-navbar {
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid gray;
+    
+    
 }
 
 
@@ -78,22 +83,23 @@ h4 {
 
 /* Estilos para el logo */
 .logo {
-    line-height: 120px; 
-    padding: 0 150px;
+    line-height: 90px; 
+    padding: 0 100px;
     text-decoration: none;
 }
 
-/* Estilos para la imagen del logo */
+
 .image {
     width: 90px;
-    height: auto;   
+    height: auto;
+   
 }
 
 /* Estilos para el título */
 .titulo {
     display: none;
     color: #000;
-    line-height: 110px;
+    line-height: 10px;
 }
 
 /* Estilos adicionales para el título */
@@ -116,8 +122,12 @@ h4 {
 /* Estilos para los enlaces del menú */
 .nav-menu-link {
     color: black !important;
-    font-size: 15px !important; /* Ajustar el tamaño de la fuente según sea necesario */
+    font-size: 17px !important; /* Ajustar el tamaño de la fuente según sea necesario */
     padding: 10px 15px; /* Ajustar el relleno según sea necesario */
+}
+.nav-item {
+    margin-right: 10px;
+    position: relative;
 }
 
 /* Estilos para el efecto hover y active de los enlaces */
@@ -129,6 +139,13 @@ h4 {
     display: block;
     transition: all 300ms;
 }
+.dropdown-menu {
+    width: 117px; /* Ancho del menú desplegable */
+    height: 80px;
+    margin-top: 30px;
+    overflow-y: auto;
+
+}
 
 .nav-menu-link:hover::after,
 .nav-menu-link:focus::after,
@@ -136,20 +153,61 @@ h4 {
     width: 100%;
 }
 
+/* Añadir borde derecho a los elementos del menú, excepto al último, usando pseudo-elemento */
+.navbar-nav .nav-item {
+    position: relative;
+}
 
+.navbar-nav .nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -5px; /* La mitad del margin-right */
+    transform: translateY(-50%);
+    height: 70%; /* Altura de la línea */
+    width: 1px; /* Grosor de la línea */
+    background-color: #ccc;
+}
+/* Estilos para el botón de scroll to top */
+.scroll-to-top-btn {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* Asegúrate de que esté encima de otros elementos */
+    border: none;
+    outline: none;
+    background-color: #000; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Forma redonda */
+    font-size: 18px; /* Tamaño del texto */
+    transition: background-color 0.3s ease;
+    opacity: 0.4;
+}
 
+.scroll-to-top-btn:hover {
+    background-color: #555; /* Color al pasar el ratón */
+}
+.header .container {
+    padding-left: 10px; /* Ajusta según sea necesario */
+    padding-right: 10px; /* Ajusta según sea necesario */
+}
 
 
 @media (max-width: 1000px) {
-    /* .contenedor {
-        max-width: 100px; 
-        margin: 130px auto 0 auto; 
+    .contenedor {
+        margin: 50px auto 0 auto; 
         padding: 0 15;
         margin-bottom: 10%;
-    }  */
-    .header {
-        height: 120px;
+    }  
+    .custom-navbar {
+        top: 25px;
     }
+    /* .header {
+        height: 120px;
+    } */
 
    /* Estilo para los elementos de la lista */
     .custom-navbar-collapse .nav-item {
@@ -187,7 +245,12 @@ h4 {
         width: 50px;
         height: auto;   
     }
-   
+    .black-bar {
+        left: 80%; /* Centra horizontalmente */
+    }
+    .navbar-nav .nav-item:not(:last-child)::after {
+        display: none;
+    }
 
 }
 
@@ -199,7 +262,7 @@ h4 {
     justify-content: center;
     align-items: flex-end;
     /* min-height: 100vh; */
-    margin-top: 25%; 
+    margin-top: 20px; 
 }
 .contenedor__footer {
     position: absolute;
@@ -238,8 +301,8 @@ h4 {
 }
 
 .social-icons li a {
-    font-size: 2em;
-    color: rgb(106, 5, 5);
+    font-size: 24px;
+    color: rgb(0, 0, 0);
     margin: 0 10px;
     display: inline-block;
     transition: 0.5s;
@@ -250,7 +313,7 @@ h4 {
 }
 
 .footer__menu li a {
-    font-size: 30em;
+    font-size: 24px;
     color: black;
     margin: 0 8px;
     display: inline-block;
@@ -272,75 +335,12 @@ h4 {
     font-size: 1.4em;
     opacity: 0.75;
 }
-
-
-
-
-/* Nosotros */
-.about-post {
-    margin-bottom: 30px; /* Espacio entre cada post */
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-.rounded {
-    border-radius: 0.25rem;
-}
-
-
-.about-heading-content {
-    margin-top: 20px;
-}
-
-.aspect-ratio {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Proporción de 16:9 */
-}
-
-.aspect-ratio img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bg-faded {
-    background-color: #ffffff;
-}
-
-.section-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.section-heading-lower {
-    display: block;
-    font-size: 3rem;
-    font-weight: normal;
-}
-
-.p-5 {
-    padding: 1.5rem !important;
-}
-
-.post-content p {
-    margin: 0 0 1rem 0;
-}
-
-.post-content a {
-    color: #007bff;
+.menu a {
+    color: black;
     text-decoration: none;
 }
 
-.post-content a:hover {
-    text-decoration: underline;
-}
+
 /* Historias */
 .contenedor h1 {
     margin-bottom: 40px; /* Ajusta este valor según sea necesario */
@@ -399,196 +399,6 @@ h4 {
 }
 
 
-/* Contacto */
-
-form {
-    background: rgb(169, 169, 169);
-    width: 1000px;
-    margin: 25px auto;
-    max-width: 100%;
-    border-radius: 4px;
-    padding: 55px 30px;
-    /* border: 1px  solid black;
-     */
-}
-
-form .half {
-    display: flex;
-    justify-content: space-between;
-}
-
-form .half .item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    width: 48%;
-}
-
-form label {
-    display: block;
-    font-size: 13px;
-    letter-spacing: 7.5px;
-    margin-bottom: 16px;
-}
-
-form .half .item input {
-    border-radius: 4px;
-    border: 1px solid rgb(0, 0, 0) ;
-    outline: 0;
-    padding: 16px;
-    width: 100%;
-    height: 44px;
-    background: transparent;
-    font-size: 17px;
-}
-form .full {
-    margin-bottom: 24px;
-}
-form .full textarea {
-    background: transparent;
-    border-radius: 4px;
-    border: 1px solid rgb(0, 0, 0) ;
-    outline: 0;
-    padding: 12px 16px;
-    width: 100%;
-    height: 200px;
-}
-form .action {
-    margin-bottom: 152px;
-}
-
-form .action input {
-    background:rgb(253, 253, 253) ;
-    border-radius: 4px;
-    border: 1px solid black;
-    cursor: pointer;
-    font-size: 93px;
-    font-weight: 600;
-    height: 94px;
-    letter-spacing: 3px;
-    outline: 0;
-    padding: 0;
-  
-}
-
-
-/* Proyecto */
-
-.historia-contenedor {
-    background: rgb(255, 255, 255);
-    /* width: 100px; */
-    margin: 25px auto;
-    max-width:300px;
-    border-radius: 4px;
-    padding: 35px 30px;
-    /* border: 1px  solid rgb(118, 118, 118);  */
-  
-}
-
-.imagen-proyecto {
-    width: 600px;
-    height: 300px;
-    max-height: 200px;  
-    object-fit: cover;
-
-}
-.imagen-proyecto:hover {
-    transform: scale(1.2);
-}
-
-.imagen-proyecto {
-    flex: 1;
-    margin-right: 40px;
-    overflow: hidden;
-}
-.imagen-proyecto img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    transition: 0.5s ease;
-}
-.project-text {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 10px 20px 10px;
-}
-.project-text p {
-    color: grey;
-    font-size: 1.9rem;
-}
-
-
-
-/* Footer */
-
-.footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* min-height: 100vh; */
-    margin-top: 25%; 
-}
-.contenedor__footer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: rgb(255, 255, 255);
-    height: 30%;
-    padding: 20px 50px;
-    border-top: 1px solid gray;
-    flex-direction: column;
-}
-
-.social-icons, 
-.footer__menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-}
-.social-icons li, 
-.footer__menu li {
-    list-style: none;
-}
-
-.social-icons li a {
-    font-size: 3em;
-    color: black;
-    margin: 0 30px;
-    display: inline-block;
-    transition: 0.5s;
-}
-.social-icons li a:hover {
-    transform: translateY(-10px);
-}
-
-.footer__menu li a {
-    font-size: 1.9em;
-    color: black;
-    margin: 0 10px;
-    display: inline-block;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: 0.5s;
-}
-.footer__menu li a:hover {
-    opacity: 1;
-}
-.pages{
-    color: rgb(0, 0, 0);
-}
-.año {
-    color: rgb(0, 0, 0);
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.4em;
-    opacity: 0.75;
-}
 
 /* Nosotros */
 .about {
@@ -899,6 +709,7 @@ form .action input {
     color: white;
     cursor: pointer;
     z-index: 10000;
+
 }
 /* Define el tamaño del contenedor del carrusel */
 #carouselExampleAutoplaying {
@@ -924,7 +735,7 @@ form .action input {
     object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
     object-position: center; /* Centra la imagen */
 }
-  
+
   /* Estilos para el contenedor de la imagen completa */
 #fullImageView {
     display: none;
@@ -938,13 +749,13 @@ form .action input {
     align-items: center;
     z-index: 1000;
 }
-  
+
   /* Estilos para la imagen completa */
 #fullImage {
     max-width: 90%;
     max-height: 80%;
 }
-  
+
   /* Estilos para el botón de cerrar */
 #closeButton {
     position: absolute;
@@ -954,7 +765,7 @@ form .action input {
     color: white;
     cursor: pointer;
 }
-  
+
   /* Estilos para los botones de navegación */
 #prevButton, #nextButton {
     position: absolute;
@@ -966,15 +777,15 @@ form .action input {
     cursor: pointer;
     user-select: none;
 }
-  
+
 #prevButton {
     left: 10px;
 }
-  
+
 #nextButton {
     right: 10px;
 }
-  
+
 #prevButton:hover, #nextButton:hover {
     color: #f1f1f1;
 }
@@ -985,7 +796,7 @@ form .action input {
     padding: 20px; /* Añade padding para dar espacio alrededor del contenido */
     text-align: justify; /* Justifica el texto para una apariencia más ordenada */
 }
-  
+
 /* Estilos para el párrafo */
 .content-container p {
     line-height: 1.6; /* Mejora la legibilidad del texto aumentando el espaciado entre líneas */
@@ -1122,6 +933,37 @@ form .action input {
 /* Inicio */
 
 
+/* Estilos para la barra negra */
+.black-bar {
+    background-color: black;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+    position: absolute;
+    bottom: 0;
+    left: 10%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    border-radius: 5px;
+}
+
+.black-bar h1 {
+    color: white; /* Cambia el color del texto según sea necesario */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.black-bar .btn {
+    background-color: #000000; /* Cambia el color de fondo del botón según sea necesario */
+    color: white; /* Cambia el color del texto del botón según sea necesario */
+    border: none;
+    padding: 10px 20px; /* Ajusta el relleno del botón según sea necesario */
+    border-radius: 5px; /* Ajusta el radio de borde del botón según sea necesario */
+    text-decoration: none; /* Elimina la decoración de subrayado del enlace */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+.black-bar .btn:hover {
+    background-color: #606060; /* Cambia el color de fondo del botón al pasar el ratón sobre él */
+}
+
 #carouselExampleAutoplaying {
     width: 70%; /* Puedes ajustar el ancho según tus necesidades */
     height: 400px; /* Ajusta la altura según tus necesidades */
@@ -1145,6 +987,7 @@ form .action input {
     object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
     object-position: center; /* Centra la imagen */
 }
+
 
 
 /* Noticias */
@@ -1179,3 +1022,32 @@ form .action input {
 .project-link i {
     font-size: 24px; /* Tamaño del icono */
 }
+
+/* Video */
+
+.social-share {
+    display: flex;
+    gap: 20px; /* Espacio entre iconos */
+    margin-top: 20px; /* Espacio superior */
+    justify-content: center; /* Centrar horizontalmente los iconos dentro del contenedor */
+    align-items: center; /* Centrar verticalmente los iconos dentro del contenedor */
+    margin: 80px auto 20px auto;
+}
+.social-share a {
+    color: #fff; /* Color del icono */
+    background-color: #000000; /* Color de fondo por defecto (Facebook) */
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hacer los iconos redondos */
+    text-decoration: none;
+    transition: background-color 0.3s; /* Animación suave */
+    font-size: 24px; 
+}
+    .social-share a:hover {
+        background-color: #555; /* Color de fondo al pasar el ratón */
+}       
+
+
