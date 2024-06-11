@@ -26,63 +26,59 @@
 </head>
 <body>
   
-  <header class="">
+  <header class="container-fluid">
     <nav class="navbar navbar-expand-lg custom-navbar">
-      <div class="container">
-        <!-- Logo y Título -->
-        <a href="{% url 'home' %}" class="logo">
-          <img class="image" src="{% static 'core/img/logo.png' %}" alt="Logo">
-          <h1 class="titulo titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
-        </a>
-        <!-- Botón de navegación colapsable para móviles -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Enlaces de navegación -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto ">
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" href="{% url 'home' %}">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link nav-menu-link {% if '/fotografias/' in request.path or '/videos/' in request.path   %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Colaboraciones
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item nav-menu-link " href="{% url 'fotografias' %}">Fotografía</a>
-                <a class="dropdown-item nav-menu-link"  href="{% url 'videos' %}">Videos</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-menu-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
-            </li>
-          </ul>
+        <div class="container-fluid">
+            <!-- Logo y Título -->
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+                <img class="image" src="{% static 'core/img/logo.png' %}" alt="Logo">
+                <h1 class="titulo titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
+            </a>
+            <!-- Botón de navegación colapsable para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/' %}nav-menu-link_active{% endif %}" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/nosotros/' %}nav-menu-link_active{% endif %}" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/historias/' %}nav-menu-link_active{% endif %}" href="{% url 'historias' %}">Historias</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-menu-link  {% if '/fotografias/' in request.path or '/videos/' in request.path %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Colaboraciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item nav-menu-link" href="{% url 'fotografias' %}">Fotografía</a>
+                            <a class="dropdown-item nav-menu-link" href="{% url 'videos' %}">Videos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/proyectos/' %}nav-menu-link_active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/noticias/' %}nav-menu-link_active{% endif %}" href="{% url 'noticias' %}">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-menu-link {% if request.path == '/contacto/' %}nav-menu-link_active{% endif %}" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-  </header>
-
+</header>
 
 
   {% block content %} {% endblock %}
 
   <footer class="footer">
     <div class="contenedor__footer">
-      <a href="{% url 'home' %}" class="logo">
-        <h1 class="titulo-footer titulo-colectivo">Colectivo<span class="titulo-rectangulo">Rectángulo</span></h1>
-      </a>
     <ul class="social-icons">
       <li>
         {% if LINK_INSTAGRAM %}      

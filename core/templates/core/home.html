@@ -6,18 +6,20 @@
 
 {% block content %}
 <main class="contenedor">
-  <h1>Inicio</h1>
+  <!-- {% comment %} <h1>Inicio</h1> {% endcomment %} -->
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       {% for post in posts %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          <img class="d-block w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
-          <div class="carousel-caption d-md-block">
-            <div class="black-bar">
-              <h1>{{ post.title }}</h1>
-            <a href="{% url 'historia' post.id %}" class="btn btn-primary">Ver Historia</a>
+          <a href="{% url 'historia' post.id %}" class="carousel-link">
+            <img class="d-block w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
+            <div class="carousel-caption d-md-block">
+              <div class="black-bar">
+                <h1>{{ post.title }}</h1>
+                <h3>{{ post.nombre }}</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       {% endfor %}
     </div>
@@ -31,4 +33,5 @@
     </button>
   </div>
 </main>
+
 {% endblock %}

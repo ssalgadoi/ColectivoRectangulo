@@ -5,25 +5,25 @@
 {% block title %}Historias{% endblock %}
 {% block content %}
 <main class="contenedor">
-<h1>Historias</h1>
-<section class="post-list">
-  <div class="category-content">
-  {% for post in posts %} 
-    <article class="post"> 
-      <div class="post-header" >
-        <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-      </div> 
-      <div class="post-body">
-          <h1>{{ post.title }}</h1>
-          {% comment %} <p>{{ post.content|linebreaks }}</p> {% endcomment %}
-          <a href="{% url 'historia' post.id %}" class="post-link">Link</a>
-      </div >
-    </article>
-  {% endfor %}
-  </div >
-</section>
-</main>
-
+  <h1>Historias</h1>
+  <section class="post-list">
+    <div class="category-content">
+    {% for post in posts %} 
+      <a href="{% url 'historia' post.id %}" class="post-link">
+        <article class="post"> 
+          <div class="post-header">
+            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+          </div>
+          <div class="post-body">
+            <h1>{{ post.title }}</h1>
+            <!-- <p>{{ post.content|linebreaks }}</p>  -->
+          </div>
+        </article>
+      </a>
+    {% endfor %}
+    </div>
+  </section>
+  </main>
 
 {% endblock %}
 
