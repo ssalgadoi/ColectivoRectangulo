@@ -1,0 +1,113 @@
+
+/* Inicio */
+
+/* Asegúrate de que el main ocupe todo el espacio restante */
+.contenedor-inicio {
+    margin-top: 0px; /* Debe coincidir con la altura del header */
+    height: calc(100vh - 60px); /* Resta la altura del header del total de la ventana */
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Ajusta el carrusel para que ocupe todo el espacio disponible */
+#carouselExampleAutoplaying {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    display: block;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
+    object-position: center; /* Centra la imagen */
+}
+
+/* Estilos para la barra negra */
+.black-bar {
+    background-color: black;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    border-radius: 5px;
+}
+
+.black-bar h1 {
+    color: white; /* Cambia el color del texto según sea necesario */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.black-bar .btn {
+    background-color: #000000; /* Cambia el color de fondo del botón según sea necesario */
+    color: white; /* Cambia el color del texto del botón según sea necesario */
+    border: none;
+    padding: 10px 20px; /* Ajusta el relleno del botón según sea necesario */
+    border-radius: 5px; /* Ajusta el radio de borde del botón según sea necesario */
+    text-decoration: none; /* Elimina la decoración de subrayado del enlace */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+.black-bar .btn:hover {
+    background-color: #606060; /* Cambia el color de fondo del botón al pasar el ratón sobre él */
+}
+
+/* Imagen */
+
+.wrapper {
+    max-width: 1300px;
+    position: relative;
+    padding: 20px;
+}
+
+.wrapper .carousel {
+    white-space: nowrap;
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    height: calc(100vh - 10px); /* Resta la altura del header del total de la ventana */
+}
+
+.carousel img {
+    height: 340px;
+    object-fit: cover;
+    width: calc(100% / 3);
+    margin-left: 14px;
+}
+
+.wrapper i {
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    line-height: 46px;
+    background: #000000;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.wrapper i:first-child {
+    left: -23px;
+}
+
+.wrapper i:last-child {
+    right: -23px;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}

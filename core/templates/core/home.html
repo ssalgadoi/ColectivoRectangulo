@@ -9,7 +9,7 @@
   <!-- {% comment %} <h1>Inicio</h1> {% endcomment %} -->
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      {% for post in posts %}
+      {% for post in history_posts %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <a href="{% url 'historia' post.id %}" class="carousel-link">
             <img class="d-block w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
@@ -32,6 +32,41 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+</main>
+
+<!-- <main class="contenedor">
+  <h1>Fotografias</h1>
+  <section class="post-list-fotografias">
+    <div class="category-content-fotografias">
+      
+      {% for post in posts %}
+      <article class="post-fotografias">
+        <a href="{% url 'fotografia' post.id %}" class="post-link"> <!-- Enlace que envuelve todo el artículo 
+          <div class="post-header-fotografias">
+            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+          </div>
+          <div class="post-body-fotografias">
+            <h2>{{ post.title }}</h2> Cambiado a <h2> para mejorar la estructura semántica 
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main> -->
+
+<main class="wrapper">
+  <h1>Fotografías</h1>
+  <i class="fa-solid fa-angle-left"></i>
+  <div class="carousel">
+    {% for post in posts %}
+    <a href="{% url 'fotografia' post.id %}" class="post-link">
+      <img class="image-item" src="{{ post.image.url }}" alt="{{ post.title }}">
+      <!-- Aquí va el contenido de cada tarjeta -->
+    </a>
+    {% endfor %}
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
 </main>
 
 {% endblock %}

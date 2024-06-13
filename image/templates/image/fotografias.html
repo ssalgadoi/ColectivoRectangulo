@@ -7,21 +7,22 @@
 {% block content %}
 <main class="contenedor">
   <h1>Fotografias</h1>
-  <section class="post-list">
-    <div class="category-content">
-    {% for post in posts %} 
-      <article class="post"> 
-        <div class="post-header" >
-          <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-        </div> 
-        <div class="post-body">
-            <h1>{{ post.title }}</h1>
-            {% comment %} <p>{{ post.content|linebreaks }}</p> {% endcomment %}
-            <a href="{% url 'fotografia' post.id %}" class="post-link">Link</a>
-        </div >
+  <section class="post-list-fotografias">
+    <div class="category-content-fotografias">
+      {% for post in posts %}
+      <article class="post-fotografias">
+        <a href="{% url 'fotografia' post.id %}" class="post-link"> <!-- Enlace que envuelve todo el artículo -->
+          <div class="post-header-fotografias">
+            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+          </div>
+          <div class="post-body-fotografias">
+            <h2>{{ post.title }}</h2> <!-- Cambiado a <h2> para mejorar la estructura semántica -->
+          </div>
+        </a>
       </article>
-    {% endfor %}
-    </div >
+      {% endfor %}
+    </div>
   </section>
 </main>
+
 {% endblock %}

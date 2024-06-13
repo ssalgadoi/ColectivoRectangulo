@@ -1,0 +1,32 @@
+/* Noticias */
+
+.project-img {
+    width: 100%; /* Ancho fijo */
+    height: 450px; /* Alto fijo */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    position: relative; /* Posición relativa para el enlace */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.project-img img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 100%; /* Alto completo del contenedor */
+    object-fit: cover; /* Ajustar la imagen sin distorsión */
+}
+
+.project-link {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px; /* Relleno */
+    border-radius: 50%; /* Bordes redondeados */
+    color: white; /* Color del icono */
+    text-decoration: none; /* Sin subrayado */
+    display: flex; /* Usar flexbox para el contenido del enlace */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.project-link i {
+    font-size: 24px; /* Tamaño del icono */
+}

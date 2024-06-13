@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.8;
+
+}
+p {
+    color: black;
+    font-size: 2rem;
+}
+.contenedor {
+    max-width: 100%;  
+    margin: 60px auto 100px auto; 
+    padding: 0 15;
+    margin-bottom: 20px; 
+} 
+
+h1, h2, h3 {
+    font-family: "Lato", sans-serif;
+    margin: 5rem;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+
+
+
+
+
+/* Historias */
+.contenedor h1 {
+    margin-bottom: 40px; /* Ajusta este valor según sea necesario */
+}
+.video-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    padding-top: 56.25%; /* Proporción 16:9 (altura:ancho) */
+    margin-right: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.titulo-post {
+    font-weight: 700;
+    /* margin-bottom: 40px; */
+}
+.texto p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    
+}
+.texto {
+    margin-left: 10px;
+}
+.texto h1 {
+    text-decoration: underline;
+}
+.autor {
+    text-align: center;
+    margin-bottom: 20px; /* Centrar el contenido */
+}
+
+.autor a {
+    color: #595959; /* Color del texto del enlace */
+    text-decoration: none; /* Quitar subrayado predeterminado */
+    margin: 0 5px;
+    font-weight: normal; /* Espacio entre enlaces */
+}
+.texto span {
+    font-weight: bold;
+}
+
+.autor a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
+    color: black;
+}
+.title-stories {
+    margin-bottom: 50px;
+}
+
+
+
+
+/* Nosotros */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.about-image {
+    flex: 1;
+    margin-right: 40px;
+    overflow: hidden;
+}
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.about-image:hover img {
+    transform: scale(1.2);
+}
+.about-content {
+    flex: 1;
+}
+.about-content h1 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: rgb(0, 0, 0);
+}
+.about-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+}
+.about-content .read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    color: red;
+    font-size: 19px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+.about-content .read-more:hover {
+    background-color: red;
+}
+@media (max-width: 1145px) {
+    .about {
+        padding: 20px;
+        flex-direction: column;
+    }
+    .about-image {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+    .about-content p {
+        padding: 0px;
+        font-size: 16px;
+    }
+    .about-content .read-more {
+        font-size: 16px;
+    }
+    
+}
+
+/* Historias */
+
+/* Estilos para el contenedor del video */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    padding-top: 56.25%; /* Proporción 16:9 (altura:ancho) */
+    margin: 20px; /* Añade margen alrededor del contenedor del video */
+  }
+  
+  /* Estilos para el iframe del video */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+  /* Estilos para la columna de texto */
+.texto {
+    padding: 20px; /* Añade padding alrededor del contenido de texto */
+}
+
+/* Estilos adicionales para el contenedor del video en diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+    .col-xl-10 {
+      padding: 0 15px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .col-xl-6 {
+      padding: 0 15px; /* Ajusta el padding para pantallas pequeñas */
+    }
+}
+
+
+/* Proyecto */
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px ;
+
+}
+.title-project {
+    font-size: 2.4rem;
+    
+}
+/* blog-box-container */
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+/* blog-box*/
+.project-box {
+    max-width: 950px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all ease 0.3s;
+}
+.project-box:hover {
+    background-color: white;
+    box-shadow:  16px 20px 50px rgba(0,0,0,0.12);
+}
+/* blog-box-img */
+.project-img {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all ease 0.3s;
+}
+/* blog-imh-link */
+.project-link {
+    position: absolute;
+    font-size: 18px;
+    left: 50%;
+    top: 50%;
+    transform: translate( -70%, -70%);
+    width: 50px;
+    top: 50%;
+    /* border-radius: 50%; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 30px rgba(20, 97, 212, 0.12);
+    animation: fade 0.3s;
+
+}
+.project-box:hover .project-img a {
+    display: flex;
+} 
+.project-box:hover .project-img img {
+    filter: blur(3px);
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* Fotografia Galeria de imagenes */
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.galeria img {
+    max-width: 298px;
+    max-height: 224px;
+    margin: 2px;
+}
+
+.galeria img:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+#fullImageView {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    z-index: 9999;
+}
+
+#fullImage {
+    padding: 24px;
+    max-width: 98%;
+    max-height: 98%;
+}
+
+#closeButton {
+    position: absolute ;
+    top: 12px;
+    right: 12px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+
+}
+/* Define el tamaño del contenedor del carrusel */
+#carouselExampleAutoplaying {
+    width: 70%; /* Ajusta el ancho según tus necesidades */
+    height: 700px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+    margin: 0 auto; /* Centra horizontalmente el carrusel */
+    display: block;
+}
+  
+  /* Asegúrate de que las imágenes tengan el mismo tamaño y estén centradas */
+.carousel-inner {
+    height: 100%;
+}
+  
+.carousel-item {
+    height: 100%;
+}
+  
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
+    object-position: center; /* Centra la imagen */
+}
+
+  /* Estilos para el contenedor de la imagen completa */
+#fullImageView {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+  /* Estilos para la imagen completa */
+#fullImage {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+  /* Estilos para el botón de cerrar */
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+  /* Estilos para los botones de navegación */
+#prevButton, #nextButton {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+#prevButton:hover, #nextButton:hover {
+    color: #f1f1f1;
+}
+/* Estilos para el contenedor del párrafo */
+.content-container {
+    max-width: 900px; /* Define el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Añade padding para dar espacio alrededor del contenido */
+    text-align: justify; /* Justifica el texto para una apariencia más ordenada */
+}
+
+/* Estilos para el párrafo */
+.content-container p {
+    line-height: 1.6; /* Mejora la legibilidad del texto aumentando el espaciado entre líneas */
+    font-size: 1.9em; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Cambia el color del texto */
+}
+/* Estilos para el subtítulo */
+.subtitle {
+    font-size: 1.9em; /* Ajusta el tamaño de la fuente del subtítulo */
+    color: #555; /* Cambia el color del subtítulo */
+    margin-top: 40px; /* Añade un margen superior para separar el subtítulo del párrafo */
+    text-align: center; /* Centra el texto del subtítulo */
+    
+}
+
+
+
+
+/* Historias */
+
+.aspect-ratio {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.aspect-ratio img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.card {
+    margin-bottom: 30px; /* Espacio entre las tarjetas */
+}
+@media (max-width: 767px) {
+    .col.mb-4 {
+      margin-bottom: 20px; /* Espacio entre las columnas en dispositivos móviles */
+    }
+}
+.post-titulo{
+    margin-top: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Video */
+
+.social-share {
+    display: flex;
+    gap: 20px; /* Espacio entre iconos */
+    margin-top: 20px; /* Espacio superior */
+    justify-content: center; /* Centrar horizontalmente los iconos dentro del contenedor */
+    align-items: center; /* Centrar verticalmente los iconos dentro del contenedor */
+    margin: 80px auto 20px auto;
+}
+.social-share a {
+    color: #fff; /* Color del icono */
+    background-color: #000000; /* Color de fondo por defecto (Facebook) */
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hacer los iconos redondos */
+    text-decoration: none;
+    transition: background-color 0.3s; /* Animación suave */
+    font-size: 24px; 
+}
+    .social-share a:hover {
+        background-color: #555; /* Color de fondo al pasar el ratón */
+}       
+
+
