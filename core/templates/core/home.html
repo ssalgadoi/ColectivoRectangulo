@@ -5,8 +5,8 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<main class="contenedor-inicio ">
-  <!-- {% comment %} <h1>Inicio</h1> {% endcomment %} -->
+<main class="contenedor-inicio">
+  <!-- Carrusel Principal -->
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       {% for post in history_posts %}
@@ -34,39 +34,56 @@
   </div>
 </main>
 
-<!-- <main class="contenedor">
-  <h1>Fotografias</h1>
-  <section class="post-list-fotografias">
-    <div class="category-content-fotografias">
-      
-      {% for post in posts %}
-      <article class="post-fotografias">
-        <a href="{% url 'fotografia' post.id %}" class="post-link"> <!-- Enlace que envuelve todo el artículo 
-          <div class="post-header-fotografias">
-            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-          </div>
-          <div class="post-body-fotografias">
-            <h2>{{ post.title }}</h2> Cambiado a <h2> para mejorar la estructura semántica 
-          </div>
-        </a>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-</main> -->
-
-<main class="wrapper">
-  <h1>Fotografías</h1>
-  <i class="fa-solid fa-angle-left"></i>
-  <div class="carousel">
+<main class="contenedor-inicio-dos">
+  <a href="{% url 'fotografias' %}" class="post-link"><h1>Fotografías</h1></a>
+  <ul class="gallery">
     {% for post in posts %}
-    <a href="{% url 'fotografia' post.id %}" class="post-link">
-      <img class="image-item" src="{{ post.image.url }}" alt="{{ post.title }}">
-      <!-- Aquí va el contenido de cada tarjeta -->
-    </a>
+      <li>
+        <div class="card">
+          <a href="{% url 'fotografia' post.id %}" class="post-link">
+            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+            </div>
+          </a>
+        </div>
+      </li>
     {% endfor %}
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-</main>
+  </ul>
+</main> 
+
+<script>
+  const slider = document.querySelector('.gallery');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const SCROLL_SPEED = 3;
+  const walk = (x - startX) * SCROLL_SPEED;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+
+</script>
+
 
 {% endblock %}
+

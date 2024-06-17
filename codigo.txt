@@ -1,0 +1,74 @@
+
+.contenedor-inicio-dos {
+    top: 0px;
+    height: calc(100vh - -130px);
+   
+}
+.card-inicio {
+    margin-top: 90px;
+}
+.card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 400px; /* Altura fija de la imagen */
+    object-fit: cover; /* Hace que la imagen se ajuste al tamaño del contenedor sin deformarse */
+    border-radius: 8px 8px 0 0; /* Esquinas redondeadas solo en la parte superior de la imagen */
+}
+.card-body {
+    padding: 5px;
+    background-color: rgb(205, 205, 205);
+}
+
+.card-title {
+    font-size: 20px;
+    /* font-weight: 10; */
+    margin-top: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+}
+
+.contenedor-inicio-dos {
+    margin-top: 130px;
+}
+
+.post-link {
+    text-decoration: none; /* Elimina la línea subrayada del enlace */
+    color: black; /* Color del texto */
+}
+
+.post-link:hover {
+    text-decoration: none; /* Elimina la línea subrayada del enlace al pasar el ratón */
+    color: black; /* Color del texto al pasar el ratón */
+}
+
+.post-link h1 {
+    color: black; /* Color del texto del título */
+    margin-bottom: 0; /* Elimina el margen inferior del título si es necesario */
+    font-size: 35px;
+}
+.card:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para el efecto de resaltado */
+}
+
+
+
+
+
+ocupar <i class="
+    .card {
+        width: 100%; /* Asegura que las tarjetas ocupen el ancho completo */
+        margin-right: 0; /* Quitamos el margen derecho en pantallas más pequeñas */
+        float: none; /* Desactivamos el float para que las tarjetas se apilen */
+        margin-bottom: 20px;
+    } fa-empty-set    "></i>

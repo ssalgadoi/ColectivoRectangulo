@@ -2,7 +2,7 @@
 
 
 .custom-navbar {
-    background-color: rgb(201, 3, 3);
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid gray;
     height: 92px;
 }
@@ -10,7 +10,10 @@
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
-
+.dropdown-menu {
+    width: 155px;  /* Ancho de la caja */
+    height: 195px; /* Alto de la caja */
+}
 
 
 /* Estilos para el logo */
@@ -38,6 +41,11 @@
 
 .titulo-rectangulo {
     font-weight: 700;
+}
+.navbar-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -70,9 +78,6 @@
     width: 100%;
 }
 
-.navbar-nav-header .nav-item {
-    position: relative;
-}
 
 .navbar-nav-header .nav-item:not(:last-child)::after {
     content: '';
@@ -156,25 +161,13 @@
         width: 50px;
         height: auto;   
     }
-
-    /* .black-bar {
-        left: 80%;
-    } */
-
     .navbar-nav-header .nav-item:not(:last-child)::after {
          display: none; /*Elimina las lines de separacion  */
     } 
-
-   
-
     .nav-menu-link {
         color: rgb(0, 0, 0) !important;
         font-size: 17px !important;
         padding: 10px 15px !important;
     } 
-
-
-
-    
 }
 
