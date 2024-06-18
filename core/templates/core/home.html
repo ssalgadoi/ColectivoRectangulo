@@ -34,55 +34,31 @@
   </div>
 </main>
 
+
+
+
+
 <main class="contenedor-inicio-dos">
-  <a href="{% url 'fotografias' %}" class="post-link"><h1>Fotografías</h1></a>
-  <ul class="gallery">
-    {% for post in posts %}
-      <li>
-        <div class="card">
-          <a href="{% url 'fotografia' post.id %}" class="post-link">
-            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
+  <h1>Proyectos</h1>
+  <section class="post-list">
+    <div class="category-content">
+      {% for post in posts %}
+        <a href="{% url 'historia' post.id %}" class="post-link">
+          <article class="post">
+            <div class="post-header post-project">
+              <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+              <h2 class="post-title">{{ post.title }}</h2>
             </div>
-          </a>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-</main> 
-
-<script>
-  const slider = document.querySelector('.gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', e => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const SCROLL_SPEED = 3;
-  const walk = (x - startX) * SCROLL_SPEED;
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-
-</script>
+            <div class="post-titulo">
+              <!-- Puedes mostrar otros campos de ProjectPost si los tienes -->
+              <!-- <p>{{ post.content|linebreaks }}</p> -->
+            </div>
+          </article>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+</main>
 
 
 {% endblock %}

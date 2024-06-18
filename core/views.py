@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from history.models import Post as HistoryPost
-from image.models import Post 
+
 
 # Create your views here.
 
@@ -9,7 +9,7 @@ def core(request):
 
 def home(request):
     history_posts = HistoryPost.objects.all()
-    posts = Post.objects.all()
+    posts = HistoryPost.objects.all()
     context = {
         'history_posts': history_posts,
         'posts': posts,

@@ -5,27 +5,32 @@
 {% block title %}Historias{% endblock %}
 {% block content %}
 <main class="contenedor">
-  <h1>Historias</h1>
+<h1>Historias</h1>
+  <!-- Barra de navegación de categorías con estilos personalizados -->
+  <nav class="category-nav-historias text-center">
+    {% for category in categories %}
+      <a href="{% url 'category' category.id %}" class="link-historias"
+         >{{ category.name }}</a>
+      {% if not forloop.last %}<span class="separator"> | </span>{% endif %}
+    {% endfor %}
+  </nav>
+
+
   <section class="post-list">
     <div class="category-content">
-    {% for post in posts %} 
-      <a href="{% url 'historia' post.id %}" class="post-link">
-        <article class="post"> 
-          <div class="post-header">
-            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-          </div>
-          <div class="post-titulo">
-            <h1>{{ post.title }}</h1>
-            <!-- <p>{{ post.content|linebreaks }}</p>  -->
-          </div>
-        </article>
-      </a>
-    {% endfor %}
+      {% for post in posts %}
+        <a href="{% url 'historia' post.id %}" class="post-link">
+          <article class="post">
+            <div class="post-header">
+              <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
+            </div>
+            <div class="post-titulo">
+              <h1>{{ post.title }}</h1>
+            </div>
+          </article>
+        </a>
+      {% endfor %}
     </div>
   </section>
-  </main>
-
+</main>
 {% endblock %}
-
-
-
