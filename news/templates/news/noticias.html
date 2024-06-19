@@ -4,22 +4,22 @@
 {% block title %}Noticias{% endblock %}
 
 {% block content %}
-<main class="contenedor">
-  <h1>Noticias</h1>
+<main class="container">
   {% for post in posts %}
-  <section class="project">
-    <div class="project-heading">
-      <h1 class="title-project">{{post.title}}</h1>
-      <div class="project-container">
-        <div class="project-box">
-          <div class="project-img">
-            <img src="{{post.image.url}}" alt="{{post.title}}">
-            <a href="{{ post.url }}" class="project-link" target="_blank">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a> 
+  <section class="row proyecto">
+    <div class="col-xl-12">
+      <div class="row align-items-center">
+        <div class="col-xl-6">
+          <div class="image-project">
+            <a href="{{ post.url }}" target="_blank" class="image-link"> <!-- Enlace al post con clase image-link -->
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" class="project-image"> <!-- Imagen con clase project-image -->
+            </a>
           </div>
-          <div class="project-text"> 
-            <p>{{ post.content }}</p>
+        </div>
+        <div class="col-xl-6">
+          <div class="texto">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content|linebreaks }}</p>
           </div>
         </div>
       </div>

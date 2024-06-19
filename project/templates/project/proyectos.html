@@ -5,21 +5,28 @@
 {% block title %}Proyectos{% endblock %}
 
 {% block content %}
-<main class="contenedor-project">
-  
+
+<main class="container">
   {% for post in posts %}
-  <section class="custom-project">
-    <h1>{{ post.title }}</h1>
-    <div class="container-project">
-      <div class="content-project">
-          <img class="image-project" src="{{ post.image.url }}" alt="{{ post.title }}">
-          <div class="text-project">{{ post.content }}</div>
+  <section class="row proyecto">
+    <div class="col-xl-12">
+      <div class="row align-items-center">
+        <div class="col-xl-6">
+          <div class="image-project">
+            <a href="{{ post.url }}" target="_blank" class="image-link"> <!-- Enlace al post con clase image-link -->
+              <img src="{{ post.image.url }}" alt="{{ post.title }}" class="project-image"> <!-- Imagen con clase project-image -->
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="texto">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content|linebreaks }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   {% endfor %}
 </main>
 {% endblock %}
-    
-
-

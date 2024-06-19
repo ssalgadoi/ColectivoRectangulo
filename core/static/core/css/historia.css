@@ -71,7 +71,7 @@
   /* Estilos CSS personalizados */
 
 .category-nav-historias {
-    background-color: #000000; /* Color de fondo */
+    background-color: #ffffff; /* Color de fondo */
     padding: 10px; /* Espaciado interno */
     margin-bottom: 20px; /* Margen inferior */
     text-align: center; /* Alineación del texto */
@@ -79,7 +79,7 @@
 
 .category-nav-historias .link-historias {
     text-decoration: none; /* Sin subrayado en los enlaces */
-    color: #ffffff; /* Color del texto */
+    color: #000000; /* Color del texto */
     padding: 8px 12px; /* Espaciado interno */
     margin: 0 5px; /* Margen entre enlaces */
     border-radius: 4px; /* Bordes redondeados */

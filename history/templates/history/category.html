@@ -6,6 +6,7 @@
 {% block content %}
 <main class="contenedor">
   
+  <h1>Categorías</h1>
 
   <!-- Barra de navegación de categorías con estilos personalizados -->
   <nav class="category-nav-historias text-center mb-4">
@@ -19,7 +20,7 @@
     <a href="{% url 'historias' %}" class="link-historias{% if category.id == cat.id %} active{% endif %}" >Todas las categorías</a>
   </nav>
 
-  <h1>Categorías</h1>
+ 
 
   <section class="post-list">
     <div class="category-content">
