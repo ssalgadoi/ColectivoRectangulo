@@ -11,7 +11,7 @@
     display: block;
 }
 .dropdown-menu {
-    width: 155px;  /* Ancho de la caja */
+    width: 116px;  /* Ancho de la caja */
     height: 195px; /* Alto de la caja */
 }
 
@@ -117,7 +117,7 @@
 /* 
 
 /* Estilos responsivos */
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .contenedor {
         /* margin: 50px auto 0 auto;  */
         padding: 0 15;

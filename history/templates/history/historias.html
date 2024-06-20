@@ -16,21 +16,18 @@
   </nav>
 
 
-  <section class="post-list">
-    <div class="category-content">
-      {% for post in posts %}
-        <a href="{% url 'historia' post.id %}" class="post-link">
-          <article class="post">
-            <div class="post-header">
-              <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-            </div>
-            <div class="post-titulo">
-              <h1>{{ post.title }}</h1>
-            </div>
-          </article>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+<main class="contendor-project"> 
+  <div class="grid-projects">
+    {% for post in posts %}
+    <a href="{% url 'historia' post.id %}" class="card-link">
+      <div class="card-project" style="--i:url('{{ post.image.url }}')">
+        <div class="content-project">
+          <h2>{{ post.title }}</h2>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </main>
+
 {% endblock %}

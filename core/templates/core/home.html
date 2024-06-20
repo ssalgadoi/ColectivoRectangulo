@@ -34,32 +34,54 @@
   </div>
 </main>
 
-
-
-
-
-<main class="contenedor-inicio-dos">
-  <h1>Proyectos</h1>
-  <section class="post-list">
-    <div class="category-content">
-      {% for post in posts %}
-        <a href="{% url 'historia' post.id %}" class="post-link">
-          <article class="post">
-            <div class="post-header post-project">
-              <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-              <h2 class="post-title">{{ post.title }}</h2>
-            </div>
-            <div class="post-titulo">
-              <!-- Puedes mostrar otros campos de ProjectPost si los tienes -->
-              <!-- <p>{{ post.content|linebreaks }}</p> -->
-            </div>
-          </article>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+<main class="contendor-project"> 
+  <h1>Últimos Proyectos</h1>
+  <div class="grid-projects">
+    {% for post in posts|slice:":9" %}
+    <a href="{% url 'historia' post.id %}" class="card-link">
+      <div class="card-project" style="--i:url('{{ post.image.url }}')">
+        <div class="content-project">
+          <h2>{{ post.title }}</h2>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <div >
+    <a class="about-button" href="{% url 'historias' %}" >Cargar más proyectos</a>
+  </div>
 </main>
+
+<main class="about-home">
+  <div class="container-about">
+    <div class="about-image">
+      <div class="about-img">
+        <img src="{% static 'core/img/001.webp' %}">
+      </div>
+      <div class="about-img">
+        <img src="{% static 'core/img/006.webp' %}">
+      </div>
+    </div>
+    <div class="about-content">
+      <span class="about-name">Quiénes Somos</span>
+      <h2 class="about-title">Colectivo Rectángulo</h2>
+      <p class="about-text">El colectivo Rectángulo, compuesto por el fotógrafo Richard Salgado y por el realizador Miguel Luna, nace en el 2012 en Santiago de Chile en base al encuentro entre la fotografía y el cine, mientras ambos se forman como documentalistas en la Universidad de Chile.
+
+        El primer proyecto del colectivo es el webdoc Rectángulo en el Ojo en el cual se instalan las primeras motivaciones y ejes de acción del colectivo. La creación de series de cortometrajes multimedia con discurso unitario en cada obra, la narración documental, así como el trabajo colaborativo de los miembros son algunos de ellos. “Rectángulo en el Ojo” se estrenó en el 2014 y ha tenido una extensa difusión en festivales internacionales.</p>
+        
+        <a class="about-button" href="{% url 'contacto' %}">Contáctanos</a>
+    </div>
+  </div>
+ 
+
+</main>
+<!-- 
+<main class="contendor-icons">
+  <div class="centered-container">
+    <div><i class="fa-solid fa-video"></i> Realización Audiovisual</div>
+    <div><i class="fa-solid fa-camera"></i> Realización Fotográfica</div>
+</div>
+</main> -->
 
 
 {% endblock %}
-

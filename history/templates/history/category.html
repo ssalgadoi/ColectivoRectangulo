@@ -20,24 +20,20 @@
     <a href="{% url 'historias' %}" class="link-historias{% if category.id == cat.id %} active{% endif %}" >Todas las categorías</a>
   </nav>
 
- 
 
-  <section class="post-list">
-    <div class="category-content">
-      {% for post in category.get_posts.all %}
-        <article class="post"> 
-          <div class="post-header">
-            <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
-          </div> 
-          <div class="post-body">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content|linebreaks }}</p>
-            <a href="{% url 'historia' post.id %}" class="btn btn-primary">Leer más</a>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
+<main class="contendor-project"> 
+  <h1>Categorias</h1>
+  <div class="grid-projects">
+    {% for post in category.get_posts.all %}
+    <a href="{% url 'historia' post.id %}" class="card-link">
+      <div class="card-project" style="--i:url('{{ post.image.url }}')">
+        <div class="content-project">
+          <h2>{{ post.title }}</h2>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </main>
 
 {% endblock %}

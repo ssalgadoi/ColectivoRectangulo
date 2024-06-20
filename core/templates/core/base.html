@@ -15,7 +15,9 @@
 
   <!-- Fuentes -->
   <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <script src="https://static.elfsight.com/platform/platform.js" defer></script>
 
+  <script src="https://unpkg.com/scrollreveal"></script>
 
 
   <!--Font awesome-->
@@ -46,7 +48,7 @@
   <!--JavaScript-->
   <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
   <script src="{% static 'core/js/date.js' %}"></script>
-  <script src="{% static 'core/js/imagenes.js' %}"></script>
+ 
 
 
 </head>
@@ -78,7 +80,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu-link  {% if '/fotografias/' in request.path or '/videos/' in request.path %}nav-menu-link_active{% endif %}" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Colaboraciones
+                            Servicios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item nav-menu-link" href="{% url 'fotografias' %}">Fotografía</a>
@@ -101,6 +103,7 @@
 
 
   {% block content %} {% endblock %}
+ 
 
   <footer class="footer">
     <div class="contenedor__footer">
