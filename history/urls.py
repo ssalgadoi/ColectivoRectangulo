@@ -8,4 +8,3 @@ urlpatterns = [
     path('videos/', views.audiovisual, name='videos'),
     path('video/<int:post_id>/', views.video_detail, name='video_detail'),
 ]
-

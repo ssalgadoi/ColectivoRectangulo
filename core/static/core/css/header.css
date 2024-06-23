@@ -11,7 +11,7 @@
     display: block;
 }
 .dropdown-menu {
-    width: 116px;  /* Ancho de la caja */
+    width: 160px;  /* Ancho de la caja */
     height: 195px; /* Alto de la caja */
 }
 
@@ -19,7 +19,7 @@
 /* Estilos para el logo */
 .logo {
     line-height: 70px; 
-    padding: 0 18px;
+    padding: 0 30px;
     text-decoration: none;
 }
 
@@ -30,7 +30,7 @@
 
 /* Estilos para el título */
 .titulo {
-    display: none;
+    /* display: none; */
     color: #000;
     line-height: 10px;
 }
@@ -175,3 +175,21 @@
     }
 }
 
+
+
+.top-bar {
+    background-color: #000000; /* Fondo negro */
+    padding: 10px 0; /* Espaciado vertical */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-bar .instagram-icon img {
+   font-size: 24px;
+    height: auto; /* Mantén la proporción */
+    transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.top-bar .instagram-icon img:hover {
+    transform: scale(1.1); /* Efecto de hover */
+}

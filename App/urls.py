@@ -26,8 +26,6 @@ urlpatterns = [
     path('nosotros/', include('about.urls')),
     # Path de history
     path('historias/', include('history.urls')),
-    # Path de contact
-    path('contacto/', include('contact.urls')),
     # Path de pages
     path('page/', include('pages.urls')),
     # Path de news

@@ -1,70 +1,84 @@
-/* Contacto */
-
-form {
-    background: rgb(169, 169, 169);
-    width: 1000px;
-    margin: 25px auto;
-    max-width: 100%;
-    border-radius: 4px;
-    padding: 55px 30px;
-    /* border: 1px  solid black;
-     */
+.container {
+  margin-bottom: 40px;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 20px; /* Espacio interno */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
-form .half {
-    display: flex;
-    justify-content: space-between;
+.contenedor-flex {
+  display: flex; /* Utiliza flexbox */
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
 }
 
-form .half .item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    width: 48%;
+.contacto-formulario, .servicios-contact {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  margin-right: 10px; /* Espacio entre los elementos */
+  padding: 20px; /* Espacio interno */
+  background-color: #f0f0f0; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
-form label {
-    display: block;
-    font-size: 13px;
-    letter-spacing: 7.5px;
-    margin-bottom: 16px;
+.servicios-contact {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+  display: flex; /* Utiliza flexbox */
+  flex-direction: column; /* Apila los elementos en columna */
+  justify-content: flex-start; /* Alinea los elementos al principio */
 }
 
-form .half .item input {
-    border-radius: 4px;
-    border: 1px solid rgb(0, 0, 0) ;
-    outline: 0;
-    padding: 16px;
-    width: 100%;
-    height: 44px;
-    background: transparent;
-    font-size: 17px;
-}
-form .full {
-    margin-bottom: 24px;
-}
-form .full textarea {
-    background: transparent;
-    border-radius: 4px;
-    border: 1px solid rgb(0, 0, 0) ;
-    outline: 0;
-    padding: 12px 16px;
-    width: 100%;
-    height: 200px;
-}
-form .action {
-    margin-bottom: 152px;
+.servicio {
+  margin-top: 10px;
+  display: flex; /* Utiliza flexbox para alinear icono y texto */
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-bottom: 10px; /* Espacio entre los servicios */
 }
 
-form .action input {
-    background:rgb(253, 253, 253) ;
-    border-radius: 4px;
-    border: 1px solid black;
-    cursor: pointer;
-    font-size: 93px;
-    font-weight: 600;
-    height: 94px;
-    letter-spacing: 3px;
-    outline: 0;
-    padding: 0;
+.servicio p {
+  display: flex; /* Utiliza flexbox para el párrafo también */
+  align-items: center; /* Alinea verticalmente los elementos dentro del párrafo */
+  margin: 0; /* Elimina el margen del párrafo */
+}
+
+.servicio i {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.servicios-contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.boton-correo {
+  border: 2px solid black;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 600ms, color 600ms;
+}
+
+.boton-correo:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.servicio-title {
+  margin-top: 10px;
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenedor-flex {
+    flex-direction: column; /* Apila los elementos en columna */
+  }
+  
+  .contacto-formulario, .servicios-contact {
+    margin-right: 0; /* Elimina el margen derecho */
+    margin-bottom: 20px; /* Añade un margen inferior para separar los elementos */
+  }
 }

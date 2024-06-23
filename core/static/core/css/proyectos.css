@@ -1,89 +1,112 @@
-.contendor-project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 60px;
+.project-home {
+    /* background-color: grey; */
+    padding: 1rem 9rem 2.5rem;
+    min-height: 100vh;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 13rem auto 0;
 }
 
-.grid-projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 90px; /* Espacio entre las tarjetas */
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+.container-project {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 3rem; /* Añadir margen inferior para separar los proyectos */
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+    justify-content: space-between;
+    gap: 3rem; /* Aumentar el gap para más espacio entre imagen y contenido */
 }
 
-.card-project {
-  width: 100%;
-  height: 0;
-  padding-bottom: 66.67%; /* Aspect ratio 3:2 */
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-image: var(--i);
-  border-radius: 5px;
-  box-shadow: 3px 5px 5px rgba(3, 32, 51, 0.8);
-  overflow: hidden;
+.project-image {
+    width: 45%; /* Ancho de la sección de la imagen */
+    flex-shrink: 0; /* Asegura que el contenedor de imágenes no se reduzca */
+    display: flex;
+    justify-content: center; /* Centrar la imagen horizontalmente */
+    align-items: center; /* Centrar la imagen verticalmente */
 }
 
-.content-project {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: 0.5s;
+.project-img {
+    width: 100%;
+    height: auto; /* Ajustar altura automáticamente */
+    overflow: hidden;
+    margin-bottom: 1.56rem; /* Añadir margen inferior para espacio entre imágenes */
 }
 
-.card-project:hover .content-project {
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 1;
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen dentro del contenedor sin distorsionar */
+    transition: all 600ms;
 }
 
-.content-project h2, .content-project a {
-  color: white;
+.project-img:hover img {
+    transform: scale(1.2);
 }
 
-@media (max-width: 900px) {
-  .grid-projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.project-content {
+    width: 50%; /* Ancho de la sección de contenido */
+    max-width: 100%;
+    text-align: left; /* Alinear el texto a la izquierda */
 }
 
-@media (max-width: 600px) {
-  .grid-projects {
-    grid-template-columns: 1fr;
-  }
+.project-name {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 13px;
+    position: relative;
+    text-transform: capitalize;
 }
 
-.load-more-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.project-name::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: -62px;
+    width: 48px;
+    height: 2px;
+    background-color: black;
 }
 
-.load-more-btn {
-  background-color: rgb(53, 53, 53);
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 3px 5px 5px rgba(70, 70, 70, 0.8);
-  transition: background-color 0.3s ease;
+.project-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 20px; /* Ajustar el espacio inferior del título */
 }
 
-.load-more-btn:hover {
-  background-color: #333;
+.project-text {
+    margin-bottom: 1.56rem; /* Añadir margen inferior para espacio entre texto y botón */
+    font-size: 15px;
+}
+
+.project-button {
+    font-weight: 500;
+    font-size: 1.125rem;
+    border: 2px solid black;
+    color: black;
+    padding: 0.75rem 2.125rem;
+    transition: background 600ms, color 600ms;
+    margin-top: 20px;
+}
+
+.project-button:hover {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .container-project {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-image,
+    .project-content {
+        width: 100%; /* Cambiar a ancho completo en dispositivos más pequeños */
+        max-width: 100%;
+        text-align: center; /* Centrar el texto en dispositivos más pequeños */
+    }
+    
+    .project-img {
+        margin-bottom: 1.5rem; /* Ajuste de margen inferior en pantallas más pequeñas */
+    }
 }

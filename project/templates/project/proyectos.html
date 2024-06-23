@@ -6,27 +6,25 @@
 
 {% block content %}
 
-<main class="container">
-  {% for post in posts %}
-  <section class="row proyecto">
-    <div class="col-xl-12">
-      <div class="row align-items-center">
-        <div class="col-xl-6">
-          <div class="image-project">
-            <a href="{{ post.url }}" target="_blank" class="image-link"> <!-- Enlace al post con clase image-link -->
-              <img src="{{ post.image.url }}" alt="{{ post.title }}" class="project-image"> <!-- Imagen con clase project-image -->
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="texto">
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.content|linebreaks }}</p>
-          </div>
+
+  <main class="project-home">
+    {% comment %} <!-- <h1>Proyectos Audiovisuales</h1> --> {% endcomment %}
+    {% for post in posts %}
+    <div class="container-project">
+      <div class="project-image">
+        <div class="project-img">
+          <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="project-image"> <!-- Imagen con clase project-image -->
+          </a>
         </div>
       </div>
+      <div class="project-content">
+        <h2 class="project-title">{{ post.title }}</h2>
+        <p class="project-text">{{ post.content }}</p>
+        <!-- Puedes activar el siguiente botón para redirigir al contacto -->
+        <!-- <a class="project-button" href="{% url 'contacto' %}">Contáctanos</a> -->
+      </div>
     </div>
-  </section>
-  {% endfor %}
-</main>
+    {% endfor %}
+  </main>
 {% endblock %}

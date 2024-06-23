@@ -15,8 +15,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
-
 
 class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name="Título")
@@ -30,7 +28,7 @@ class Post(models.Model):
     category = models.ManyToManyField(Category, verbose_name="Categorías", related_name="get_posts")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición") 
-    
+
     class Meta:
         verbose_name = "historia"
         verbose_name_plural = "historias"
@@ -38,4 +36,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    

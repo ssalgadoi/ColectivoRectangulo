@@ -4,7 +4,7 @@
 {% block title %}Noticias{% endblock %}
 
 {% block content %}
-<main class="container">
+{% comment %} <main class="container">
   {% for post in posts %}
   <section class="row proyecto">
     <div class="col-xl-12">
@@ -26,6 +26,26 @@
     </div>
   </section>
   {% endfor %}
+</main> {% endcomment %}
+<main class="project-home">
+  {% comment %} <h1>Proyectos Audiovisuales</h1> {% endcomment %}
+  {% for post in posts %}
+  <div class="container-project">
+    <div class="project-image">
+      <div class="project-img">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="project-image"> <!-- Imagen con clase project-image -->
+      </div>
+    </div>
+    <div class="project-content">
+      <!-- <span class="project-name">Quiénes Somos</span> -->
+      <h2 class="project-title">{{ post.title }}</h2>
+      <p class="project-text">{{ post.content }}</p>
+        
+      <!-- <a class="project-button" href="{% url 'contacto' %}">Contáctanos</a> -->
+    </div>
+  </div>
+  {% endfor %}
 </main>
+
 
 {% endblock %}

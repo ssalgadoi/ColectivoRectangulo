@@ -29,7 +29,7 @@
     <div class="category-content-fotografias">
       {% for post in posts %}
       <article class="post-fotografias">
-        <a href="{% url 'fotografia' post.id %}" class="post-link"> <!-- Enlace que envuelve todo el artículo -->
+        <a href="{% url 'historia' post.id %}" class="post-link"> <!-- Enlace que envuelve todo el artículo -->
           <div class="post-header-fotografias">
             <img class="post-img" src="{{ post.image.url }}" alt="{{ post.title }}">
           </div>
